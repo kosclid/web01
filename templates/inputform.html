@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}data input page{% endblock %}
+{% block content %}
+<br>
+<h1 class="text-center"> 전송 데이터 입력</h1>
+
+<div class="container">
+    <form action = '/methodout', method = 'POST'> <!--submit누르면 action -->
+        <div class="mb-3">
+        <label for="name" class="form-label">name</label> 
+        <input type="text" class="form-control" id="name", name = 'name', aria-describedby="nameHelp">
+        <!-- for는 id와연동 되어 있다. id는 유일 class는 소속 -->
+        <div id="nameHelp" class="form-text">한글로 작성하세요</div>
+        </div>
+        <div class="mb-3">
+        <label for="Email1" class="form-label">email</label>
+        <input type="email" class="form-control" id="Email1", name = 'Email1', aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+        <label for="pass" class="form-label">Password</label>
+        <input type="password" class="form-control" id="pass", name = 'pass', , aria-describedby="passHelp">
+        </div>
+        <!-- <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div> -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock%}
