@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}블로그 리스트{% endblock %}
+{% block content %}
+
+<br>
+<div class = 'container'>
+    <form action = '/blogform', method = 'POST', enctype="multipart/form-data"> <!--submit누르면 action -->
+        <div class="mb-3">
+        <label for="title" class="form-label">블로그 제목</label> 
+        <input type="text" class="form-control" id="title", name = 'title', aria-describedby="titleHelp">
+        <!-- for는 id와연동 되어 있다. id는 유일 class는 소속 -->
+        <div id="titleHelp" class="form-text">블로그 제목 입력</div>
+        </div>
+        <div class="mb-3">
+        <label for="content" class="form-label">블로그 내용</label>
+        <input type="text" class="form-control" id="content", name = 'content', aria-describedby="contentHelp">
+        <div id="contentHelp" class="form-text">블로그 내용 입력</div>
+        </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">이미지 선택</label>
+            <input class="form-control" type="file" id="formFile" name = 'formFile'>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock%}
